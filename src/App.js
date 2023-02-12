@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import React, { useEffect, useState } from 'react';
+import { Button, Table } from 'react-bootstrap';
+import ProdutoEstoque from './Componentes/produtoEstoque/produtoEstoque.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const [dados, setDados] = useState([])
+
+useEffect(() => {
+
+
+}, [])
+
+const App = () => {
+  return (<>
+    <Table striped bordered hover>
+      <th>
+        <tr>
+          <td>
+            Produto
+          </td>
+          <td>
+            Lote
+          </td>
+          <td>
+            Validade
+          </td>
+          <td>
+            Estoque
+          </td>
+        </tr>
+      </th>
+      <tbody>
+        <ProdutoEstoque dados={dados}>
+          
+        </ProdutoEstoque>
+      </tbody>
+    </Table>
+  </>
   );
 }
 
